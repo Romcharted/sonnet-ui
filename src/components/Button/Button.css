@@ -1,0 +1,109 @@
+.sui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sui-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--sui-radius-md);
+  font-family: var(--sui-font-family);
+  font-weight: var(--sui-font-weight-bold);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color var(--sui-duration-fast) var(--sui-easing),
+    border-color var(--sui-duration-fast) var(--sui-easing);
+}
+
+.sui-button:focus-visible {
+  outline: 2px solid var(--sui-color-focus);
+  outline-offset: 2px;
+}
+
+.sui-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.sui-button[aria-busy='true'] {
+  cursor: progress;
+}
+
+/* Tailles : hauteur minimale de 32px, 40px recommandé pour le tactile */
+.sui-button--sm {
+  min-height: 2rem;
+  padding: 0 var(--sui-space-3);
+  font-size: var(--sui-font-size-sm);
+}
+.sui-button--md {
+  min-height: 2.5rem;
+  padding: 0 var(--sui-space-4);
+  font-size: var(--sui-font-size-md);
+}
+.sui-button--lg {
+  min-height: 3rem;
+  padding: 0 var(--sui-space-6);
+  font-size: var(--sui-font-size-lg);
+}
+
+.sui-button--full {
+  width: 100%;
+}
+
+/* Variantes */
+.sui-button--primary {
+  background: var(--sui-color-primary);
+  color: var(--sui-color-on-primary);
+}
+.sui-button--primary:hover:not(:disabled) {
+  background: var(--sui-color-primary-hover);
+}
+
+.sui-button--secondary {
+  background: var(--sui-color-surface-strong);
+  color: var(--sui-color-text);
+}
+.sui-button--secondary:hover:not(:disabled) {
+  background: var(--sui-color-surface-strong-hover);
+}
+
+.sui-button--ghost {
+  background: transparent;
+  border-color: var(--sui-color-border);
+  color: var(--sui-color-text);
+}
+.sui-button--ghost:hover:not(:disabled) {
+  background: var(--sui-color-surface-strong);
+}
+
+.sui-button--danger {
+  background: var(--sui-color-danger);
+  color: var(--sui-color-on-danger);
+}
+.sui-button--danger:hover:not(:disabled) {
+  background: var(--sui-color-danger-hover);
+}
+
+.sui-button__icon {
+  display: inline-flex;
+}
+
+.sui-button__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--sui-radius-full);
+  animation: sui-spin 700ms linear infinite;
+}
+
+@keyframes sui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sui-button__spinner {
+    animation-duration: 2s;
+  }
+}

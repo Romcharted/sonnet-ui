@@ -1,0 +1,17 @@
+.sui-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem var(--sui-space-2);
+  border-radius: var(--sui-radius-full);
+  font-family: var(--sui-font-family);
+  font-size: var(--sui-font-size-sm);
+  font-weight: var(--sui-font-weight-medium);
+  line-height: var(--sui-line-height);
+  white-space: nowrap;
+}
+
+.sui-badge--neutral { background: var(--sui-tone-neutral-bg); color: var(--sui-tone-neutral-fg); }
+.sui-badge--info    { background: var(--sui-tone-info-bg);    color: var(--sui-tone-info-fg); }
+.sui-badge--success { background: var(--sui-tone-success-bg); color: var(--sui-tone-success-fg); }
+.sui-badge--warning { background: var(--sui-tone-warning-bg); color: var(--sui-tone-warning-fg); }
+.sui-badge--danger  { background: var(--sui-tone-danger-bg);  color: var(--sui-tone-danger-fg); }
