@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorTokens } from './TokenTable';
+
+<Meta title="Foundations/Colors" />
+
+# Couleurs
+
+Les composants n'utilisent jamais une couleur directement, uniquement ces tokens. Chaque paire texte et fond atteint au moins un contraste de 4.5:1, le minimum WCAG AA. Change le thème dans la barre d'outils pour voir les valeurs sombres.
+
+## Surfaces et texte
+
+<ColorTokens
+  tokens={[
+    { name: '--sui-color-bg', usage: 'Fond de page et des champs' },
+    { name: '--sui-color-surface', usage: 'Fond de carte ou de zone secondaire' },
+    { name: '--sui-color-surface-strong', usage: 'Bouton secondaire, survol' },
+    { name: '--sui-color-text', usage: 'Texte principal' },
+    { name: '--sui-color-text-muted', usage: 'Texte secondaire, aides, placeholders' },
+    { name: '--sui-color-border', usage: 'Bordures de champs et boutons ghost' },
+    { name: '--sui-color-focus', usage: 'Contour de focus clavier' },
+  ]}
+/>
+
+## Intentions
+
+<ColorTokens
+  tokens={[
+    { name: '--sui-color-primary', usage: 'Action principale, liens' },
+    { name: '--sui-color-danger', usage: 'Action destructrice, erreurs' },
+  ]}
+/>
+
+## Tons
+
+Utilisés par les badges et les alertes. Chaque ton a un fond et une couleur de texte.
+
+<ColorTokens
+  tokens={[
+    { name: '--sui-tone-neutral-bg', usage: 'Neutre' },
+    { name: '--sui-tone-info-bg', usage: 'Information' },
+    { name: '--sui-tone-success-bg', usage: 'Succès' },
+    { name: '--sui-tone-warning-bg', usage: 'Avertissement' },
+    { name: '--sui-tone-danger-bg', usage: 'Erreur' },
+  ]}
+/>

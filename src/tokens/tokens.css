@@ -1,0 +1,113 @@
+/*
+ * Design tokens de sonnet-ui.
+ * Toutes les valeurs visuelles des composants passent par ces variables.
+ * Les paires texte/fond respectent un contraste WCAG AA (4.5:1 minimum).
+ */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* Surfaces et texte */
+  --sui-color-bg: #ffffff;
+  --sui-color-surface: #f8fafc;
+  --sui-color-surface-strong: #e2e8f0;
+  --sui-color-surface-strong-hover: #cbd5e1;
+  --sui-color-text: #0f172a;
+  --sui-color-text-muted: #475569;
+  --sui-color-border: #64748b;
+  --sui-color-focus: #1d4ed8;
+
+  /* Intentions */
+  --sui-color-primary: #1d4ed8;
+  --sui-color-primary-hover: #1e40af;
+  --sui-color-on-primary: #ffffff;
+  --sui-color-danger: #b91c1c;
+  --sui-color-danger-hover: #991b1b;
+  --sui-color-on-danger: #ffffff;
+
+  /* Tons doux (badges, alertes) : fond + texte */
+  --sui-tone-neutral-bg: #f1f5f9;
+  --sui-tone-neutral-fg: #334155;
+  --sui-tone-info-bg: #dbeafe;
+  --sui-tone-info-fg: #1e3a8a;
+  --sui-tone-success-bg: #dcfce7;
+  --sui-tone-success-fg: #14532d;
+  --sui-tone-warning-bg: #fef3c7;
+  --sui-tone-warning-fg: #713f12;
+  --sui-tone-danger-bg: #fee2e2;
+  --sui-tone-danger-fg: #7f1d1d;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --sui-color-bg: #0b1120;
+  --sui-color-surface: #111827;
+  --sui-color-surface-strong: #1e293b;
+  --sui-color-surface-strong-hover: #334155;
+  --sui-color-text: #f1f5f9;
+  --sui-color-text-muted: #94a3b8;
+  --sui-color-border: #64748b;
+  --sui-color-focus: #93c5fd;
+
+  --sui-color-primary: #60a5fa;
+  --sui-color-primary-hover: #93c5fd;
+  --sui-color-on-primary: #0b1120;
+  --sui-color-danger: #f87171;
+  --sui-color-danger-hover: #fca5a5;
+  --sui-color-on-danger: #0b1120;
+
+  --sui-tone-neutral-bg: #1e293b;
+  --sui-tone-neutral-fg: #cbd5e1;
+  --sui-tone-info-bg: #172554;
+  --sui-tone-info-fg: #bfdbfe;
+  --sui-tone-success-bg: #052e16;
+  --sui-tone-success-fg: #bbf7d0;
+  --sui-tone-warning-bg: #422006;
+  --sui-tone-warning-fg: #fde68a;
+  --sui-tone-danger-bg: #450a0a;
+  --sui-tone-danger-fg: #fecaca;
+}
+
+:root {
+  /* Espacements : échelle de 4px */
+  --sui-space-1: 0.25rem;
+  --sui-space-2: 0.5rem;
+  --sui-space-3: 0.75rem;
+  --sui-space-4: 1rem;
+  --sui-space-5: 1.25rem;
+  --sui-space-6: 1.5rem;
+  --sui-space-8: 2rem;
+
+  /* Rayons */
+  --sui-radius-sm: 0.25rem;
+  --sui-radius-md: 0.5rem;
+  --sui-radius-lg: 0.75rem;
+  --sui-radius-full: 999px;
+
+  /* Typographie */
+  --sui-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --sui-font-size-sm: 0.875rem;
+  --sui-font-size-md: 1rem;
+  --sui-font-size-lg: 1.125rem;
+  --sui-font-weight-regular: 400;
+  --sui-font-weight-medium: 500;
+  --sui-font-weight-bold: 600;
+  --sui-line-height: 1.5;
+
+  /* Mouvement */
+  --sui-duration-fast: 120ms;
+  --sui-easing: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sui-duration-fast: 0ms;
+  }
+}
+
+body {
+  background: var(--sui-color-bg);
+  color: var(--sui-color-text);
+  font-family: var(--sui-font-family);
+}

@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Typography" />
+
+# Typographie
+
+La police système est utilisée pour la performance et un rendu natif sur chaque plateforme.
+
+| Token | Valeur | Usage |
+| --- | --- | --- |
+| `--sui-font-size-sm` | 14px | Libellés, aides, badges |
+| `--sui-font-size-md` | 16px | Texte courant, champs |
+| `--sui-font-size-lg` | 18px | Boutons larges, accroches |
+| `--sui-font-weight-regular` | 400 | Texte courant |
+| `--sui-font-weight-medium` | 500 | Badges, messages d'erreur |
+| `--sui-font-weight-bold` | 600 | Libellés, boutons, titres |
+| `--sui-line-height` | 1.5 | Interligne par défaut |
+
+<p style={{ fontSize: 'var(--sui-font-size-lg)', fontWeight: 600 }}>Grand, gras : Le vif renard brun</p>
+<p style={{ fontSize: 'var(--sui-font-size-md)' }}>Moyen, normal : Le vif renard brun saute par-dessus le chien paresseux.</p>
+<p style={{ fontSize: 'var(--sui-font-size-sm)', color: 'var(--sui-color-text-muted)' }}>Petit, discret : texte d'aide ou légende.</p>

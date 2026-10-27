@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# sonnet-ui
+
+Design system React de Romain Sonnet : des composants accessibles, documentés et testés, construits sur des design tokens partagés.
+
+## Principes
+
+- **Accessible par défaut.** Contrastes WCAG AA, navigation au clavier, attributs ARIA corrects. Chaque story passe l'audit automatique de l'onglet *Accessibility*.
+- **Tout passe par les tokens.** Aucune couleur ni espacement en dur dans les composants. Le thème sombre ne change que les tokens.
+- **Peu de composants, mais finis.** Un composant n'est ajouté que s'il a ses variantes, ses états, sa documentation et ses tests.
+
+## Organisation
+
+- **Foundations** : couleurs, espacements, typographie.
+- **Components / Actions** : ce qui déclenche une action.
+- **Components / Forms** : la saisie de données.
+- **Components / Feedback** : ce qui informe l'utilisateur.
+
+Le thème clair ou sombre se change depuis la barre d'outils en haut.
+
+## Code source
+
+Le code, les tests et l'intégration continue sont sur GitHub : [Romcharted/sonnet-ui](https://github.com/Romcharted/sonnet-ui).

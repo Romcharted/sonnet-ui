@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { SpacingTokens } from './TokenTable';
+
+<Meta title="Foundations/Spacing" />
+
+# Espacements
+
+L'échelle suit une grille de 4px. Les marges et paddings des composants n'utilisent que ces valeurs, ce qui garde un rythme vertical régulier.
+
+<SpacingTokens steps={[1, 2, 3, 4, 5, 6, 8]} />
+
+## Rayons
+
+| Token | Valeur | Usage |
+| --- | --- | --- |
+| `--sui-radius-sm` | 4px | Petits éléments internes |
+| `--sui-radius-md` | 8px | Boutons, champs, alertes |
+| `--sui-radius-lg` | 12px | Cartes, modales |
+| `--sui-radius-full` | 999px | Badges, pastilles |
