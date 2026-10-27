@@ -12,6 +12,9 @@ Design system React documenté avec Storybook : design tokens, composants access
 | Actions | Button |
 | Forms | TextField |
 | Feedback | Alert, Badge |
+| Lab | ScoreBoard (scores PageSpeed Insights) |
+
+Le **Lab** regroupe des composants plus spécialisés, créés pour des projets précis comme mon portfolio.
 
 Chaque composant est livré avec ses variantes, ses états (désactivé, chargement, erreur), une page de documentation générée, et des tests.
 
@@ -31,6 +34,7 @@ React 19, TypeScript, Storybook 10 avec Vite, Vitest et Testing Library. Déploy
 src/
   tokens/tokens.css          design tokens (clair et sombre)
   docs/                      pages Foundations (MDX)
+  lab/                       composants spécialisés (Lab)
   components/
     Button/
       Button.tsx             composant

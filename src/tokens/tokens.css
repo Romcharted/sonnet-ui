@@ -36,6 +36,15 @@
   --sui-tone-warning-fg: #713f12;
   --sui-tone-danger-bg: #fee2e2;
   --sui-tone-danger-fg: #7f1d1d;
+
+  /* Scores Lighthouse : anneau (graphique) et chiffre (texte, contraste AA) */
+  --sui-score-good-ring: #0cce6b;
+  --sui-score-good-text: #067a38;
+  --sui-score-mid-ring: #ffa400;
+  --sui-score-mid-text: #c33300;
+  --sui-score-low-ring: #ff4e42;
+  --sui-score-low-text: #cc0000;
+  --sui-score-track: #e2e8f0;
 }
 
 [data-theme='dark'] {
@@ -67,6 +76,14 @@
   --sui-tone-warning-fg: #fde68a;
   --sui-tone-danger-bg: #450a0a;
   --sui-tone-danger-fg: #fecaca;
+
+  --sui-score-good-ring: #22c55e;
+  --sui-score-good-text: #4ade80;
+  --sui-score-mid-ring: #f59e0b;
+  --sui-score-mid-text: #fdba74;
+  --sui-score-low-ring: #ef4444;
+  --sui-score-low-text: #fca5a5;
+  --sui-score-track: #1e293b;
 }
 
 :root {
@@ -97,12 +114,14 @@
 
   /* Mouvement */
   --sui-duration-fast: 120ms;
+  --sui-duration-slow: 1200ms;
   --sui-easing: cubic-bezier(0.2, 0, 0, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
     --sui-duration-fast: 0ms;
+    --sui-duration-slow: 0ms;
   }
 }
 

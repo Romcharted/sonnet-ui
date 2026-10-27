@@ -31,7 +31,7 @@ const preview: Preview = {
     a11y: { test: 'error' },
     options: {
       storySort: {
-        order: ['Introduction', 'Foundations', 'Components', ['Actions', 'Forms', 'Feedback']],
+        order: ['Introduction', 'Foundations', 'Components', ['Actions', 'Forms', 'Feedback'], 'Lab', ['Introduction']],
       },
     },
   },
