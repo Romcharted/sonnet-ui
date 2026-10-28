@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
-import './ScoreBoard.css';
+import './PageSpeedScoreboard.css';
 
 export type Device = 'mobile' | 'desktop';
 
@@ -11,7 +11,7 @@ export interface CategoryScores {
   seo: number;
 }
 
-export interface ScoreBoardProps {
+export interface PageSpeedScoreboardProps {
   /** Scores mesurés sur mobile et sur ordinateur. */
   scores: Record<Device, CategoryScores>;
   /** Adresse du site mesuré. */
@@ -65,27 +65,34 @@ function displayHost(url: string): string {
 }
 
 /** Les scores PageSpeed Insights d'un site, sur mobile ou sur ordinateur. */
-export function ScoreBoard({
+export function PageSpeedScoreboard({
   scores,
   url,
   date,
   note,
   defaultDevice = 'mobile',
   className,
-}: ScoreBoardProps) {
+}: PageSpeedScoreboardProps) {
   const [device, setDevice] = useState<Device>(defaultDevice);
   // Les anneaux partent de zéro puis se remplissent après le premier rendu.
   const [filled, setFilled] = useState(false);
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setFilled(true));
-    return () => cancelAnimationFrame(frame);
+    // Deux frames : la première affiche les anneaux vides, la seconde lance la transition.
+    let second = 0;
+    const first = requestAnimationFrame(() => {
+      second = requestAnimationFrame(() => setFilled(true));
+    });
+    return () => {
+      cancelAnimationFrame(first);
+      cancelAnimationFrame(second);
+    };
   }, []);
 
   const values = scores[device];
 
   return (
-    <div className={['sui-scoreboard', className].filter(Boolean).join(' ')}>
-      <div className="sui-scoreboard__devices" role="group" aria-label="Appareil mesuré">
+    <div className={['sui-pagespeed', className].filter(Boolean).join(' ')}>
+      <div className="sui-pagespeed__devices" role="group" aria-label="Appareil mesuré">
         {DEVICES.map((d) => (
           <button
             key={d.key}
@@ -98,41 +105,41 @@ export function ScoreBoard({
         ))}
       </div>
 
-      <ul className="sui-scoreboard__list" aria-live="polite">
+      <ul className="sui-pagespeed__list" aria-live="polite">
         {CATEGORIES.map(({ key, label }) => {
           const value = clampScore(values[key]);
           const offset = filled ? CIRCUMFERENCE * (1 - value / 100) : CIRCUMFERENCE;
           return (
-            <li key={key} className={`sui-scoreboard__item sui-scoreboard__item--${scoreBand(value)}`}>
-              <div className="sui-scoreboard__gauge">
+            <li key={key} className={`sui-pagespeed__item sui-pagespeed__item--${scoreBand(value)}`}>
+              <div className="sui-pagespeed__gauge">
                 <svg viewBox="0 0 100 100" aria-hidden="true">
-                  <circle cx="50" cy="50" r={RADIUS} className="sui-scoreboard__track" />
+                  <circle cx="50" cy="50" r={RADIUS} className="sui-pagespeed__track" />
                   <circle
                     cx="50"
                     cy="50"
                     r={RADIUS}
-                    className="sui-scoreboard__ring"
+                    className="sui-pagespeed__ring"
                     strokeDasharray={CIRCUMFERENCE}
                     strokeDashoffset={offset}
                   />
                 </svg>
-                <span className="sui-scoreboard__value">
+                <span className="sui-pagespeed__value">
                   {value}
-                  <span className="sui-scoreboard__sr"> sur 100, </span>
+                  <span className="sui-pagespeed__sr"> sur 100, </span>
                 </span>
               </div>
-              <span className="sui-scoreboard__label">{label}</span>
+              <span className="sui-pagespeed__label">{label}</span>
             </li>
           );
         })}
       </ul>
 
-      <p className="sui-scoreboard__note">
+      <p className="sui-pagespeed__note">
         {note && <>{note} </>}
         Mesuré avec PageSpeed Insights le {date}, sur{' '}
         <a href={url} target="_blank" rel="noopener noreferrer">
           {displayHost(url)}
-          <span className="sui-scoreboard__sr"> (nouvel onglet)</span>
+          <span className="sui-pagespeed__sr"> (nouvel onglet)</span>
         </a>
         .
       </p>

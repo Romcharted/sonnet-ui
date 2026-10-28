@@ -5,4 +5,4 @@ export * from './components/Badge';
 export * from './components/Button';
 export * from './components/TextField';
 
-export * from './lab/ScoreBoard/ScoreBoard';
+export * from './lab/PageSpeedScoreboard/PageSpeedScoreboard';

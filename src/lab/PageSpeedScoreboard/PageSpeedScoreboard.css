@@ -1,4 +1,4 @@
-.sui-scoreboard {
+.sui-pagespeed {
   container-type: inline-size;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 /* Choix de l'appareil : contrôle segmenté */
-.sui-scoreboard__devices {
+.sui-pagespeed__devices {
   display: inline-flex;
   align-self: flex-start;
   gap: var(--sui-space-1);
@@ -17,7 +17,7 @@
   background: var(--sui-color-surface-strong);
 }
 
-.sui-scoreboard__devices button {
+.sui-pagespeed__devices button {
   min-height: 2.5rem;
   padding: 0 var(--sui-space-4);
   border: 0;
@@ -31,22 +31,22 @@
   transition: background-color var(--sui-duration-fast) var(--sui-easing);
 }
 
-.sui-scoreboard__devices button:hover {
+.sui-pagespeed__devices button:hover {
   background: var(--sui-color-surface-strong-hover);
 }
 
-.sui-scoreboard__devices button[aria-pressed='true'] {
+.sui-pagespeed__devices button[aria-pressed='true'] {
   background: var(--sui-color-text);
   color: var(--sui-color-bg);
 }
 
-.sui-scoreboard__devices button:focus-visible {
+.sui-pagespeed__devices button:focus-visible {
   outline: 2px solid var(--sui-color-focus);
   outline-offset: 2px;
 }
 
 /* Jauges */
-.sui-scoreboard__list {
+.sui-pagespeed__list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--sui-space-6) var(--sui-space-4);
@@ -56,46 +56,46 @@
 }
 
 @container (max-width: 26rem) {
-  .sui-scoreboard__list {
+  .sui-pagespeed__list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.sui-scoreboard__item {
+.sui-pagespeed__item {
   display: grid;
   justify-items: center;
   gap: var(--sui-space-2);
   text-align: center;
 }
 
-.sui-scoreboard__gauge {
+.sui-pagespeed__gauge {
   position: relative;
   width: min(100%, 7rem);
   aspect-ratio: 1;
 }
 
-.sui-scoreboard__gauge svg {
+.sui-pagespeed__gauge svg {
   width: 100%;
   height: 100%;
   transform: rotate(-90deg);
 }
 
-.sui-scoreboard__track,
-.sui-scoreboard__ring {
+.sui-pagespeed__track,
+.sui-pagespeed__ring {
   fill: none;
   stroke-width: 8;
 }
 
-.sui-scoreboard__track {
+.sui-pagespeed__track {
   stroke: var(--sui-score-track);
 }
 
-.sui-scoreboard__ring {
+.sui-pagespeed__ring {
   stroke-linecap: round;
   transition: stroke-dashoffset var(--sui-duration-slow) var(--sui-easing);
 }
 
-.sui-scoreboard__value {
+.sui-pagespeed__value {
   position: absolute;
   inset: 0;
   display: grid;
@@ -106,40 +106,40 @@
   font-variant-numeric: tabular-nums;
 }
 
-.sui-scoreboard__label {
+.sui-pagespeed__label {
   font-size: var(--sui-font-size-sm);
   line-height: 1.3;
   color: var(--sui-color-text-muted);
 }
 
-.sui-scoreboard__item--good .sui-scoreboard__ring { stroke: var(--sui-score-good-ring); }
-.sui-scoreboard__item--good .sui-scoreboard__value { color: var(--sui-score-good-text); }
-.sui-scoreboard__item--mid .sui-scoreboard__ring { stroke: var(--sui-score-mid-ring); }
-.sui-scoreboard__item--mid .sui-scoreboard__value { color: var(--sui-score-mid-text); }
-.sui-scoreboard__item--low .sui-scoreboard__ring { stroke: var(--sui-score-low-ring); }
-.sui-scoreboard__item--low .sui-scoreboard__value { color: var(--sui-score-low-text); }
+.sui-pagespeed__item--good .sui-pagespeed__ring { stroke: var(--sui-score-good-ring); }
+.sui-pagespeed__item--good .sui-pagespeed__value { color: var(--sui-score-good-text); }
+.sui-pagespeed__item--mid .sui-pagespeed__ring { stroke: var(--sui-score-mid-ring); }
+.sui-pagespeed__item--mid .sui-pagespeed__value { color: var(--sui-score-mid-text); }
+.sui-pagespeed__item--low .sui-pagespeed__ring { stroke: var(--sui-score-low-ring); }
+.sui-pagespeed__item--low .sui-pagespeed__value { color: var(--sui-score-low-text); }
 
 /* Note et source */
-.sui-scoreboard__note {
+.sui-pagespeed__note {
   margin: 0;
   font-size: var(--sui-font-size-sm);
   line-height: var(--sui-line-height);
   color: var(--sui-color-text-muted);
 }
 
-.sui-scoreboard__note a {
+.sui-pagespeed__note a {
   color: var(--sui-color-text);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.sui-scoreboard__note a:focus-visible {
+.sui-pagespeed__note a:focus-visible {
   outline: 2px solid var(--sui-color-focus);
   outline-offset: 2px;
 }
 
 /* Texte lu par les lecteurs d'écran seulement */
-.sui-scoreboard__sr {
+.sui-pagespeed__sr {
   position: absolute;
   width: 1px;
   height: 1px;

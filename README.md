@@ -12,7 +12,7 @@ Design system React documenté avec Storybook : design tokens, composants access
 | Actions | Button |
 | Forms | TextField |
 | Feedback | Alert, Badge |
-| Lab | ScoreBoard (scores PageSpeed Insights) |
+| Lab | PageSpeedScoreboard (scores PageSpeed Insights) |
 
 Le **Lab** regroupe des composants plus spécialisés, créés pour des projets précis comme mon portfolio.
 
